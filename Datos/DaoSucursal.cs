@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Entidades;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -14,9 +15,10 @@ namespace Datos
         public Sucursal getSucursal(Sucursal sucursal)
         {
             DataTable tabla = ds.ObtenerTabla("SUCURSAL", "SELECT * FROM SUCURSAL WHERE ID_SUCURSAL =" + sucursal.getIdSucursal());
-            sucursal.setIdSucursal(Convert.ToInt32(tabla.Rows[0][0].ToString()));
             sucursal.setNombreSucursal(tabla.Rows[0][1].ToString());
             sucursal.setDescripcionSucursal(tabla.Rows[0][2].ToString());
+            sucursal.setProvinciaSucursal(Convert.ToInt32(tabla.Rows[0][3].ToString()));
+            sucursal.setDireccionSucursal(tabla.Rows[0][4].ToString());
             return sucursal;
         }
 
@@ -28,7 +30,6 @@ namespace Datos
 
         public DataTable getTablaSucursales()
         {
-            // List<Sucursal> lista = new List<Sucursal>();
             DataTable tabla = ds.ObtenerTabla("Sucursal", "SELECT * FROM SUCURSAL");
             return tabla;
         }
@@ -43,8 +44,7 @@ namespace Datos
 
         public int agregarSucursal(Sucursal sucursal)
         {
-
-            sucursal.setId_Sucursal(ds.ObtenerMaximo("SELECT max(id_Sucursal) FROM Sucursal") + 1);
+            sucursal.setIdSucursal(ds.ObtenerMaximo("SELECT max(id_Sucursal) FROM Sucursal") + 1);
             SqlCommand comando = new SqlCommand();
             ArmarParametrosSucursalAgregar(ref comando, sucursal);
             return ds.EjecutarProcedimientoAlmacenado(comando, "SP_AgregarSucursal");

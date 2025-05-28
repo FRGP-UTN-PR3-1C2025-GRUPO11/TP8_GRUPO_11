@@ -5,8 +5,6 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data
-using System.Data.SqlClient
 
 namespace Datos
 {
@@ -17,10 +15,20 @@ namespace Datos
         
         public AccesoDatos() { }
 
-        
-        private SqlConnection cn = new SqlConnection(cadenaConexion);
+        private SqlConnection ObtenerConexion()
+        {
+            SqlConnection cn = new SqlConnection(cadenaConexion);
+            try
+            {
+                cn.Open();
+                return cn;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
 
-        
         private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn)
         {
             SqlDataAdapter adaptador;
