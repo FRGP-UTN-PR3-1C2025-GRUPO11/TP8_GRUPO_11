@@ -5,32 +5,22 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data
+using System.Data.SqlClient
 
 namespace Datos
 {
-    class AccesoDatos
+    public class AccesoDatos
     {
-        string rutaBDSurcusales = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;TrustServerCertificate=True";
-        public AccesoDatos()
-        {
-            
-        }
+        private const string cadenaConexion = @"DataSource=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;Trust Server Certificate=True"
 
-        private SqlConnection ObtenerConexion()
-        {
-            SqlConnection cn = new SqlConnection(rutaBDSurcusales);
-            try
-            {
-                cn.Open();
-                return cn;
-            }
-            catch (Exception ex)
-            {
-                return null;
-            }
-        }
+        
+        public AccesoDatos() { }
 
+        
+        private SqlConnection cn = new SqlConnection(cadenaConexion);
 
+        
         private SqlDataAdapter ObtenerAdaptador(String consultaSql, SqlConnection cn)
         {
             SqlDataAdapter adaptador;
@@ -97,4 +87,3 @@ namespace Datos
 
     }
 }
-
