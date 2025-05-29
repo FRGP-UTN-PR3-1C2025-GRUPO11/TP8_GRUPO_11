@@ -31,5 +31,12 @@ namespace TP8_GRUPO_11
             gvSucursales.DataBind();
             txtBusqueda.Text = string.Empty;
         }
+
+        protected void btnMostrarTodo_Click(object sender, EventArgs e)
+        {
+            DataTable sucursal = negocio.getTabla();
+            gvSucursales.DataSource = sucursal;
+            gvSucursales.DataBind();
+        }
     }
 }
