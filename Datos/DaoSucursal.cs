@@ -30,7 +30,14 @@ namespace Datos
 
         public DataTable getTablaSucursales()
         {
-            DataTable tabla = ds.ObtenerTabla("Sucursal", "SELECT * FROM SUCURSAL");
+            DataTable tabla = ds.ObtenerTabla("Sucursal", @"
+        SELECT 
+            Sucursal.NombreSucursal,
+            Sucursal.DescripcionSucursal,
+            Provincia.DescripcionProvincia AS Provincia,
+            Sucursal.DireccionSucursal
+        FROM Sucursal
+        INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
             return tabla;
         }
 
