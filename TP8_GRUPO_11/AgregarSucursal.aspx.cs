@@ -28,5 +28,10 @@ namespace TP8_GRUPO_11
                 ddlEj1.DataBind();
             }
         }
+
+        protected void btnAgregar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

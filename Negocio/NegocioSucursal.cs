@@ -25,7 +25,7 @@ namespace Negocio
             return dao.getSucursal(suc);
         }
 
-        public bool eliminarCategoria(int id)
+        public bool eliminarSucursal(int id)
         {
             //Validar id existente 
             DaoSucursal dao = new DaoSucursal();
@@ -38,7 +38,7 @@ namespace Negocio
                 return false;
         }
 
-        public bool agregarCategoria(String nombre)
+        public bool agregarSucursal(String nombre)
         {
             int cantFilas = 0;
 

@@ -109,7 +109,7 @@
                     </div>
                 </div>
             </section>
-            <asp:Button ID="btnAgregar" runat="server" Text="Agregar Surcusal" />
+            <asp:Button ID="btnAgregar" runat="server" Text="Agregar Sucursal" OnClick="btnAgregar_Click" />
         </div>
     </form>
         </main>
