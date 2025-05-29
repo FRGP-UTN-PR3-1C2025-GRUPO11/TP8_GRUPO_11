@@ -46,7 +46,32 @@
 <body>
     <form id="form1" runat="server">
         <div>
-            hola
+            <asp:Label ID="llbAgregar" runat="server" Text="Agregar Surcusal"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="lblNombre" runat="server" Text="Agregue su nombre"></asp:Label>
+            <asp:TextBox ID="txtNombre" runat="server" style="margin-left: 26px; margin-top: 5px"></asp:TextBox>
+&nbsp;<asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre" ForeColor="#CC0000">Agregue Nombre</asp:RequiredFieldValidator>
+            <br />
+            <br />
+            <asp:Label ID="lblDescripcion" runat="server" Text="Descripcion"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txtDescripcion" runat="server" TextMode="MultiLine"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDescripcion" runat="server" ControlToValidate="txtDescripcion" ForeColor="#CC0000">Agregue Descripcion</asp:RequiredFieldValidator>
+            <br />
+            <br />
+            <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
+            <br />
+            <br />
+            <asp:Label ID="Label1" runat="server" Text="Direccion"></asp:Label>
+&nbsp;&nbsp;
+            <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion" ForeColor="#CC0000">Agregue Direccion</asp:RequiredFieldValidator>
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="btnAgregar" runat="server" Text="Agregar Surcusal" />
+            <br />
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </div>
     </form>
 </body>
