@@ -43,7 +43,17 @@
             <asp:HyperLink runat="server" Text="Listado de Sucursales" NavigateUrl="~/ListadoSucursales.aspx"></asp:HyperLink>
             <asp:HyperLink runat="server" Text="Eliminar Sucursal" NavigateUrl="~/EliminarSucursal.aspx"></asp:HyperLink>
         </div>
-            <h1>Listar Sucursal
+           <p>
+               <asp:Label ID="lblBusqueda" runat="server" Text="Busqueda por surcusal"></asp:Label>
+&nbsp;&nbsp;&nbsp;&nbsp;
+               <asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <asp:Button ID="btnFiltro" runat="server" OnClick="btnFiltro_Click" Text="Filtrar" />
+&nbsp;&nbsp;&nbsp;&nbsp; </p>
+        <p>
+            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+        </p>
+        <h1>Listar Sucursal
                 <asp:GridView ID="gvSucursales" runat="server">
                 </asp:GridView>
         </h1>

@@ -31,13 +31,13 @@ namespace Datos
         public DataTable getTablaSucursales()
         {
             DataTable tabla = ds.ObtenerTabla("Sucursal", @"
-        SELECT 
+           SELECT 
             Sucursal.NombreSucursal,
             Sucursal.DescripcionSucursal,
             Provincia.DescripcionProvincia AS Provincia,
             Sucursal.DireccionSucursal
-        FROM Sucursal
-        INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
+            FROM Sucursal
+            INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
             return tabla;
         }
 
@@ -76,6 +76,16 @@ namespace Datos
         public DataTable getTablaProvincias()
         {
             DataTable tabla = ds.ObtenerTabla("Provincia", "SELECT * FROM Provincia");
+            return tabla;
+        }
+        public DataTable getTablaFiltrar(string idSucursal)
+        {
+            DataTable tabla = ds.ObtenerTabla("Sucursal", @"SELECT S.Id_Sucursal AS [Id], " +
+                            "S.NombreSucursal AS [Nombre], " +
+                            "S.DescripcionSucursal AS [Descripción]," +
+                            "P.DescripcionProvincia as [Provincia] ," +
+                            "S.DireccionSucursal as [Dirección] FROM SUCURSAL AS [S]" +
+                            "INNER JOIN PROVINCIA AS [P] ON S.Id_ProvinciaSucursal = P.Id_Provincia WHERE S.Id_Sucursal = " + idSucursal);
             return tabla;
         }
 

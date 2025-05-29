@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Entidades;
 using Negocio;
 
 namespace TP8_GRUPO_11
@@ -20,6 +21,15 @@ namespace TP8_GRUPO_11
                 gvSucursales.DataSource = sucursal;
                 gvSucursales.DataBind();
             }
+        }
+
+        protected void btnFiltro_Click(object sender, EventArgs e)
+        {
+
+            DataTable data = negocio.getFiltro(txtBusqueda.Text);
+            gvSucursales.DataSource = data;
+            gvSucursales.DataBind();
+            txtBusqueda.Text = string.Empty;
         }
     }
 }

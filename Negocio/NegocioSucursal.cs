@@ -63,6 +63,12 @@ namespace Negocio
             DaoSucursal dao = new DaoSucursal();
             return dao.getTablaProvincias();
         }
+
+        public DataTable getFiltro(string idSur)
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.getTablaFiltrar(idSur);
+        }
     }
 }
 
