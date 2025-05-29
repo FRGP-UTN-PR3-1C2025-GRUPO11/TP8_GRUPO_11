@@ -20,18 +20,18 @@ namespace Negocio
         public Sucursal get(int id)
         {
             DaoSucursal dao = new DaoSucursal();
-            Sucursal cat = new Sucursal();
-            cat.setIdSucursal(id);
-            return dao.getSucursal(cat);
+            Sucursal suc = new Sucursal();
+            suc.setIdSucursal(id);
+            return dao.getSucursal(suc);
         }
 
         public bool eliminarCategoria(int id)
         {
             //Validar id existente 
             DaoSucursal dao = new DaoSucursal();
-            Sucursal cat = new Sucursal();
-            cat.setIdSucursal(id);
-            int op = dao.eliminarSucursal(cat);
+            Sucursal suc = new Sucursal();
+            suc.setIdSucursal(id);
+            int op = dao.eliminarSucursal(suc);
             if (op == 1)
                 return true;
             else
@@ -42,13 +42,13 @@ namespace Negocio
         {
             int cantFilas = 0;
 
-            Sucursal cat = new Sucursal();
-            cat.setNombreSucursal(nombre);
+            Sucursal suc = new Sucursal();
+            suc.setNombreSucursal(nombre);
 
             DaoSucursal dao = new DaoSucursal();
-            if (dao.existeSucursal(cat) == false)
+            if (dao.existeSucursal(suc) == false)
             {
-                cantFilas = dao.agregarSucursal(cat);
+                cantFilas = dao.agregarSucursal(suc);
             }
 
             if (cantFilas == 1)
