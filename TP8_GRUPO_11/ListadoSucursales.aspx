@@ -127,20 +127,30 @@ html {
             <asp:HyperLink runat="server" Text="Listado de Sucursales" NavigateUrl="~/ListadoSucursales.aspx"></asp:HyperLink>
             <asp:HyperLink runat="server" Text="Eliminar Sucursal" NavigateUrl="~/EliminarSucursal.aspx"></asp:HyperLink>
         </div>
-           <p>
-               <asp:Label ID="lblBusqueda" runat="server" Text="Busqueda por surcusal"></asp:Label>
-               <asp:TextBox ID="txtBusqueda" runat="server"></asp:TextBox>
-               <asp:Button ID="btnFiltro" runat="server" OnClick="btnFiltro_Click" Text="Filtrar"  CssClass="btn-custom"/>
-               <asp:Button ID="btnMostrarTodo" runat="server" OnClick="btnMostrarTodo_Click" Text="Mostrar todos"  CssClass="btn-custom"/>
-        </p>
-        <p>
-            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
-        </p>
         <h1>Listar Sucursal </h1>
+    </header>
+        <main>
+
+        <section>
+
+        <div class="divBusqueda">
+            <asp:Label ID="lblBusqueda" runat="server" Text="Busqueda por Id Sucursal"  style="width: 250px"></asp:Label>
+                <div style="margin-right: 100px">
+                    <div>
+                        <asp:TextBox ID="txtBusqueda" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
+                    </div>
+                    </div>
+                <asp:Button ID="btnFiltro" runat="server" OnClick="btnFiltro_Click" Text="Filtrar"  CssClass="btn-custom"/>
+                <asp:Button ID="btnMostrarTodo" runat="server" OnClick="btnMostrarTodo_Click" Text="Mostrar todos"  CssClass="btn-custom"/>
+            <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+
+            
+        </div>
+        </section>
                 <asp:GridView ID="gvSucursales" runat="server">
                 </asp:GridView>
         
-    </header>
+        </main>
     </form>
 </body>
 </html>
