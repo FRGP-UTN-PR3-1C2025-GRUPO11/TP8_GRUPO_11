@@ -139,6 +139,11 @@ html {
                     <div>
                         <asp:TextBox ID="txtBusqueda" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
                     </div>
+                    <asp:RegularExpressionValidator 
+                        ID="revTxtBusqueda" runat="server" 
+                        ErrorMessage="Debe ser un valor numérico" Display="Dynamic" 
+                        ControlToValidate="txtBusqueda" ValidationExpression="^[0-9]*$" 
+                        Font-Bold="True" ForeColor="Red"></asp:RegularExpressionValidator>
                     </div>
                 <asp:Button ID="btnFiltro" runat="server" OnClick="btnFiltro_Click" Text="Filtrar"  CssClass="btn-custom"/>
                 <asp:Button ID="btnMostrarTodo" runat="server" OnClick="btnMostrarTodo_Click" Text="Mostrar todos"  CssClass="btn-custom"/>
