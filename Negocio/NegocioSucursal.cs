@@ -57,6 +57,12 @@ namespace Negocio
                 return false;
         }
 
+
+        public DataTable getProvincias()
+        {
+            DaoSucursal dao = new DaoSucursal();
+            return dao.getTablaProvincias();
+        }
     }
 }
 

@@ -61,6 +61,9 @@
             <br />
             <br />
             <asp:Label ID="lblProvincia" runat="server" Text="Provincia"></asp:Label>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:DropDownList ID="ddlEj1" runat="server">
+            </asp:DropDownList>
             <br />
             <br />
             <asp:Label ID="Label1" runat="server" Text="Direccion"></asp:Label>

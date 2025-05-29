@@ -96,6 +96,15 @@ namespace TP8_GRUPO_11
         protected global::System.Web.UI.WebControls.Label lblProvincia;
 
         /// <summary>
+        /// Control ddlEj1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlEj1;
+
+        /// <summary>
         /// Control Label1.
         /// </summary>
         /// <remarks>

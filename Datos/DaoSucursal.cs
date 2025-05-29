@@ -65,5 +65,12 @@ namespace Datos
             SqlParametros = Comando.Parameters.Add("@NOMBRESUCURSAL", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.getNombreSucursal();
         }
+
+        public DataTable getTablaProvincias()
+        {
+            DataTable tabla = ds.ObtenerTabla("Provincia", "SELECT * FROM Provincia");
+            return tabla;
+        }
+
     }
 }
