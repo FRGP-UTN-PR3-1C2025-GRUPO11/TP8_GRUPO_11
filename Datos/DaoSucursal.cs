@@ -32,22 +32,27 @@ namespace Datos
         {
             DataTable tabla = ds.ObtenerTabla("Sucursal", @"
            SELECT 
-            Sucursal.NombreSucursal,
-            Sucursal.DescripcionSucursal,
-            Provincia.DescripcionProvincia AS Provincia,
-            Sucursal.DireccionSucursal
+            Sucursal.NombreSucursal AS [Nombre],
+            Sucursal.DescripcionSucursal AS [Descripcion],
+            Provincia.DescripcionProvincia AS [Provincia],
+            Sucursal.DireccionSucursal AS [Direccion]
             FROM Sucursal
             INNER JOIN Provincia ON Sucursal.Id_ProvinciaSucursal = Provincia.Id_Provincia");
             return tabla;
         }
 
-        public int eliminarSucursal(Sucursal sucursal)
+        private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucursal)
         {
-            SqlCommand comando = new SqlCommand();
-            ArmarParametrosSucursalEliminar(ref comando, sucursal);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_EliminarSucursal");
+            SqlParameter SqlParametros = new SqlParameter();
+            SqlParametros = Comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
+            SqlParametros.Value = sucursal.getIdSucursal();
+            SqlParametros = Comando.Parameters.Add("@NOMBRESUCURSAL", SqlDbType.VarChar);
+            SqlParametros.Value = sucursal.getNombreSucursal();
+            SqlParametros = Comando.Parameters.Add("PROVINCIASUCURSAL", SqlDbType.Int);
+            SqlParametros.Value = sucursal.getProvinciaSucursal();
+            SqlParametros = Comando.Parameters.Add("@DESCRIPCIONSUCURSAL", SqlDbType.VarChar);
+            SqlParametros.Value = sucursal.getDescripcionSucursal();
         }
-
 
         public int agregarSucursal(Sucursal sucursal)
         {
@@ -64,13 +69,11 @@ namespace Datos
             SqlParametros.Value = sucursal.getIdSucursal();
         }
 
-        private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucursal)
+        public int eliminarSucursal(Sucursal sucursal)
         {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
-            SqlParametros.Value = sucursal.getIdSucursal();
-            SqlParametros = Comando.Parameters.Add("@NOMBRESUCURSAL", SqlDbType.VarChar);
-            SqlParametros.Value = sucursal.getNombreSucursal();
+            SqlCommand comando = new SqlCommand();
+            ArmarParametrosSucursalEliminar(ref comando, sucursal);
+            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_EliminarSucursal");
         }
 
         public DataTable getTablaProvincias()
