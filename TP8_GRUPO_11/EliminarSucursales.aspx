@@ -137,6 +137,10 @@ html {
                         <div style="margin-right: 100px">
                             <div>
                                 <asp:TextBox ID="txtEliminar" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
+                                <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar surcusales" />
+                                <br />
+                                <br />
+                                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
                             </div>
                         
                         </div>

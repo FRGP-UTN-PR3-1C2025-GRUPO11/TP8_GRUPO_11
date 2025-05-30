@@ -72,7 +72,7 @@ namespace Datos
         {
             SqlCommand comando = new SqlCommand();
             ArmarParametrosSucursalEliminar(ref comando, sucursal);
-            return ds.EjecutarProcedimientoAlmacenado(comando, "SP_EliminarSucursal");
+            return ds.EjecutarProcedimientoAlmacenado(comando, "spEliminarSucursal");
         }
 
         public DataTable getTablaProvincias()
