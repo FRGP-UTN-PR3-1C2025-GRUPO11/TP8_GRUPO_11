@@ -130,18 +130,18 @@ html {
     </header>
     <form id="form1" runat="server">
         <div>
-        <section>
+            <section>
 
-            <div class="divEliminar">
-                <asp:Label ID="lblBusqueda" runat="server" Text="Ingresar Id sucursal"  style="width: 250px"></asp:Label>
-                    <div style="margin-right: 100px">
-                        <div>
-                            <asp:TextBox ID="txtEliminar" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
-                        </div>
+                <div class="divEliminar">
+                    <asp:Label ID="lblBusqueda" runat="server" Text="Ingresar Id sucursal"  style="width: 250px"></asp:Label>
+                        <div style="margin-right: 100px">
+                            <div>
+                                <asp:TextBox ID="txtEliminar" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
+                            </div>
                         
-                    </div>
-            </div>
-        </section>
+                        </div>
+                </div>
+            </section>
         </div>
     </form>
 </body>
