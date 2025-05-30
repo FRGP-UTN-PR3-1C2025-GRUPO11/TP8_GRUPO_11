@@ -19,10 +19,9 @@ namespace TP8_GRUPO_11
 
         protected void btnEliminar_Click(object sender, EventArgs e)
         {
-            int numero;
+            int numero = int.Parse(txtEliminar.Text);
 
-            if (int.TryParse(txtEliminar.Text, out numero))
-            {
+            
                 bool eliminar = negocioSucursal.eliminarSucursal(numero);
                 if (eliminar)
                 {
@@ -32,7 +31,7 @@ namespace TP8_GRUPO_11
                 {
                     lblMensaje.Text = "NO se eliminó la sucursal.";
                 }
-            }
+            
 
         }
     }
