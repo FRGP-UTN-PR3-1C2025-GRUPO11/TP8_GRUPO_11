@@ -63,6 +63,20 @@
         .formElement > :nth-child(1) {
             width: 160px;
         }
+        .btn-custom {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -109,7 +123,10 @@
                     </div>
                 </div>
             </section>
-            <asp:Button ID="btnAgregar" runat="server" Text="Agregar Sucursal" OnClick="btnAgregar_Click" />
+            <div style="margin-left: 160px">
+                <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn-custom" OnClick="btnLimpiar_Click" CausesValidation="False" />
+                <asp:Button ID="btnAgregar" runat="server" Text="Agregar Sucursal" OnClick="btnAgregar_Click" CssClass="btn-custom" />
+            </div>
         </div>
     </form>
         </main>

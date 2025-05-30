@@ -33,5 +33,12 @@ namespace TP8_GRUPO_11
         {
 
         }
+
+        protected void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtDescripcion.Text = "";
+            txtDireccion.Text = "";
+        }
     }
 }
