@@ -38,12 +38,15 @@ namespace Negocio
                 return false;
         }
 
-        public bool agregarSucursal(String nombre)
+        public bool agregarSucursal(String nombre, String descripcion, int idProvincia, string direccion)
         {
             int cantFilas = 0;
 
             Sucursal suc = new Sucursal();
             suc.setNombreSucursal(nombre);
+            suc.setDescripcionSucursal(descripcion);
+            suc.setProvinciaSucursal(idProvincia);
+            suc.setDireccionSucursal(direccion);
 
             DaoSucursal dao = new DaoSucursal();
             if (dao.existeSucursal(suc) == false)

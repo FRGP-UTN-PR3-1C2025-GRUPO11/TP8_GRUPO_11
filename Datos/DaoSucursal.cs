@@ -24,7 +24,7 @@ namespace Datos
 
         public Boolean existeSucursal(Sucursal sucursal)
         {
-            string consulta = "SELECT * FROM SUCURSAL WHERE ID_SUCURSAL='" + sucursal.getNombreSucursal() + "'";
+            string consulta = "SELECT * FROM SUCURSAL WHERE ID_SUCURSAL='" + sucursal.getIdSucursal() + "'";
             return ds.existe(consulta);
         }
 
@@ -44,19 +44,18 @@ namespace Datos
         private void ArmarParametrosSucursalAgregar(ref SqlCommand Comando, Sucursal sucursal)
         {
             SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
-            SqlParametros.Value = sucursal.getIdSucursal();
-            SqlParametros = Comando.Parameters.Add("@NOMBRESUCURSAL", SqlDbType.VarChar);
+            SqlParametros = Comando.Parameters.Add("@NombreSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.getNombreSucursal();
-            SqlParametros = Comando.Parameters.Add("PROVINCIASUCURSAL", SqlDbType.Int);
-            SqlParametros.Value = sucursal.getProvinciaSucursal();
-            SqlParametros = Comando.Parameters.Add("@DESCRIPCIONSUCURSAL", SqlDbType.VarChar);
+            SqlParametros = Comando.Parameters.Add("@DescripcionSucursal", SqlDbType.VarChar);
             SqlParametros.Value = sucursal.getDescripcionSucursal();
+            SqlParametros = Comando.Parameters.Add("@Id_ProvinciaSucursal", SqlDbType.Int);
+            SqlParametros.Value = sucursal.getProvinciaSucursal();
+            SqlParametros = Comando.Parameters.Add("@DireccionSucursal", SqlDbType.VarChar);
+            SqlParametros.Value = sucursal.getDireccionSucursal();
         }
 
         public int agregarSucursal(Sucursal sucursal)
         {
-            sucursal.setIdSucursal(ds.ObtenerMaximo("SELECT max(id_Sucursal) FROM Sucursal") + 1);
             SqlCommand comando = new SqlCommand();
             ArmarParametrosSucursalAgregar(ref comando, sucursal);
             return ds.EjecutarProcedimientoAlmacenado(comando, "SP_AgregarSucursal");

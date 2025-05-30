@@ -9,9 +9,9 @@ namespace Entidades
     public class Sucursal
     {
         private int idSucursal;
-        private int idProvinciaSucursal;
         private String NombreSucursal;
         private String DescripcionSucursal;
+        private int idProvinciaSucursal;
         private String DireccionSucursal;
 
         public Sucursal()

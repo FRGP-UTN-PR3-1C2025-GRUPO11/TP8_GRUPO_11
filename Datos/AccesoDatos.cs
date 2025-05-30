@@ -10,7 +10,6 @@ namespace Datos
 {
     public class AccesoDatos
     {
-        //private const string cadenaConexion = @"DataSource=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;Trust Server Certificate=True";
         private const string cadenaConexion = @"Data Source=localhost\SQLEXPRESS;Initial Catalog=BDSucursales;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
 
         public AccesoDatos() { }

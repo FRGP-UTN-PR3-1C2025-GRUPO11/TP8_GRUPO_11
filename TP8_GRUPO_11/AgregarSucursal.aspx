@@ -127,6 +127,9 @@
                 <asp:Button ID="btnLimpiar" runat="server" Text="Limpiar" CssClass="btn-custom" OnClick="btnLimpiar_Click" CausesValidation="False" />
                 <asp:Button ID="btnAgregar" runat="server" Text="Agregar Sucursal" OnClick="btnAgregar_Click" CssClass="btn-custom" />
             </div>
+            <div>
+                <asp:Label ID="respuesta" runat="server" Text=""></asp:Label>
+            </div>
         </div>
     </form>
         </main>

@@ -31,14 +31,30 @@ namespace TP8_GRUPO_11
 
         protected void btnAgregar_Click(object sender, EventArgs e)
         {
+            NegocioSucursal nuevaSucursal = new NegocioSucursal();
+            bool agregado = nuevaSucursal.agregarSucursal(txtNombre.Text, txtDescripcion.Text, int.Parse(ddlEj1.SelectedValue), txtDireccion.Text);
 
+            if (agregado) {
+                respuesta.Text = "Agregado con éxito.";
+            }
+            else
+            {
+                respuesta.Text = "Hubo un error.";
+            }
+            limpiar();
         }
 
         protected void btnLimpiar_Click(object sender, EventArgs e)
         {
+            limpiar();
+        }
+
+        protected void limpiar()
+        {
             txtNombre.Text = "";
             txtDescripcion.Text = "";
             txtDireccion.Text = "";
+
         }
     }
 }
