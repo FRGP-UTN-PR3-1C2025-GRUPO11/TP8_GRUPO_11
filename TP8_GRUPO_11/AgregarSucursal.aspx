@@ -99,7 +99,6 @@
                         <asp:Label ID="lblNombre" runat="server" Text="Agregue su nombre"></asp:Label>
                         <asp:TextBox ID="txtNombre" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvNombre" runat="server" ControlToValidate="txtNombre">Agregue Nombre</asp:RequiredFieldValidator>
-                        <asp:Label ID="lblErrorNom" runat="server"></asp:Label>
                     </div>
 
                     <%-- DESCRIPCION SUCURSAL --%>
@@ -121,7 +120,6 @@
                         <asp:Label ID="Label1" runat="server" Text="Direccion"></asp:Label>
                         <asp:TextBox ID="txtDireccion" runat="server"></asp:TextBox>
                         <asp:RequiredFieldValidator ID="rfvDireccion" runat="server" ControlToValidate="txtDireccion">Agregue Direccion</asp:RequiredFieldValidator>
-                        <asp:Label ID="lblErrorDirec" runat="server"></asp:Label>
                     </div>
                 </div>
             </section>
