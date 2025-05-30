@@ -67,11 +67,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="EliminarSucursales.aspx" />
     <Content Include="ListadoSucursales.aspx" />
     <Content Include="Web.config" />
     <Content Include="AgregarSucursal.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EliminarSucursales.aspx.cs">
+      <DependentUpon>EliminarSucursales.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EliminarSucursales.aspx.designer.cs">
+      <DependentUpon>EliminarSucursales.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ListadoSucursales.aspx.cs">
       <DependentUpon>ListadoSucursales.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
