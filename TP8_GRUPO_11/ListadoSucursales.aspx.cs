@@ -23,12 +23,24 @@ namespace TP8_GRUPO_11
             }
         }
 
+
         protected void btnFiltro_Click(object sender, EventArgs e)
         {
-
             DataTable data = negocio.getFiltro(txtBusqueda.Text);
-            gvSucursales.DataSource = data;
-            gvSucursales.DataBind();
+
+            if (data.Rows.Count > 0)
+            {
+                gvSucursales.DataSource = data;
+                gvSucursales.DataBind();
+                lblMen.Text = "";
+            }
+            else
+            {
+                gvSucursales.DataSource = null;
+                gvSucursales.DataBind();
+                lblMen.Text = "No se encontró ninguna sucursal con ese ID.";
+            }
+
             txtBusqueda.Text = string.Empty;
         }
 

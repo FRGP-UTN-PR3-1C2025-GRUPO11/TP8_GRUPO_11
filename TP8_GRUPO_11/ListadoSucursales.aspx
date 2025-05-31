@@ -144,6 +144,8 @@ html {
                         ErrorMessage="Debe ser un valor numérico" Display="Dynamic" 
                         ControlToValidate="txtBusqueda" ValidationExpression="^[0-9]*$" 
                         Font-Bold="True" ForeColor="Red"></asp:RegularExpressionValidator>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Label ID="lblMen" runat="server"></asp:Label>
                     </div>
                 <asp:Button ID="btnFiltro" runat="server" OnClick="btnFiltro_Click" Text="Filtrar"  CssClass="btn-custom"/>
                 <asp:Button ID="btnMostrarTodo" runat="server" OnClick="btnMostrarTodo_Click" Text="Mostrar todos"  CssClass="btn-custom"/>
