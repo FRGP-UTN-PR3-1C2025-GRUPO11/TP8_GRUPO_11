@@ -14,8 +14,8 @@
         }        
         
         .divHyperLinks {
-            justify-content: center;
             display: flex;
+            justify-content: center;
             /*gap: 100px;*/
             text-align: center;
         }
@@ -141,8 +141,12 @@ html {
                                 <br />
                                 <br />
                                 <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
+                                <asp:RegularExpressionValidator 
+                        ID="revTxxEliminar" runat="server" 
+                        ErrorMessage="Debe ser un ID Numerico" Display="Dynamic" 
+                        ControlToValidate="txtEliminar" ValidationExpression="^[0-9]*$" 
+                        Font-Bold="True" ForeColor="Red"></asp:RegularExpressionValidator>
                             </div>
-                        
                         </div>
                 </div>
             </section>
