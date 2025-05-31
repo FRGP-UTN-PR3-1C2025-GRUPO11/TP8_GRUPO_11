@@ -151,6 +151,7 @@ html {
                 </div>
             </section>
         </div>
+        <asp:Label ID="lblEliminado" runat="server"></asp:Label>
     </form>
 </body>
 </html>
