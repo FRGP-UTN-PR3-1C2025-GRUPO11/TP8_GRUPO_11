@@ -140,7 +140,7 @@ html {
                                 <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar surcusales" />
                                 <br />
                                 <br />
-                                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+                                <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
                             </div>
                         
                         </div>

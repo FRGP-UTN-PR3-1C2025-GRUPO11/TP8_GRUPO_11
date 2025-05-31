@@ -125,7 +125,7 @@ html {
         <div class="divHyperLinks">
             <asp:HyperLink runat="server" Text="Agregar Sucursal" NavigateUrl="~/AgregarSucursal.aspx"></asp:HyperLink>
             <asp:HyperLink runat="server" Text="Listado de Sucursales" NavigateUrl="~/ListadoSucursales.aspx"></asp:HyperLink>
-            <asp:HyperLink runat="server" Text="Eliminar Sucursal" NavigateUrl="~/EliminarSucursal.aspx"></asp:HyperLink>
+            <asp:HyperLink runat="server" Text="Eliminar Sucursal" NavigateUrl="~/EliminarSucursales.aspx"></asp:HyperLink>
         </div>
         <h1>Listar Sucursal </h1>
     </header>
