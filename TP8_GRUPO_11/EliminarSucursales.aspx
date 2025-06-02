@@ -137,7 +137,7 @@ html {
                         <div style="margin-right: 100px">
                             <div>
                                 <asp:TextBox ID="txtEliminar" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
-                                <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar surcusales" />
+                                <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" CssClass="btn-custom"/>
                                 <br />
                                 <br />
                                 <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
@@ -151,7 +151,6 @@ html {
                 </div>
             </section>
         </div>
-        <asp:Label ID="lblEliminado" runat="server"></asp:Label>
     </form>
 </body>
 </html>

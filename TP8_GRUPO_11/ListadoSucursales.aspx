@@ -139,16 +139,21 @@ html {
                     <div>
                         <asp:TextBox ID="txtBusqueda" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
                     </div>
+
                     <asp:RegularExpressionValidator 
                         ID="revTxtBusqueda" runat="server" 
                         ErrorMessage="Debe ser un valor numérico" Display="Dynamic" 
                         ControlToValidate="txtBusqueda" ValidationExpression="^[0-9]*$" 
-                        Font-Bold="True" ForeColor="Red"></asp:RegularExpressionValidator>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        Font-Bold="True" ForeColor="Red" ValidationGroup="Group1"></asp:RegularExpressionValidator>
+
+                    <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ErrorMessage="Campo requerido" 
+                        ControlToValidate="txtBusqueda" Display="Dynamic" Font-Bold="True" ForeColor="Red" ></asp:RequiredFieldValidator>
                     <asp:Label ID="lblMen" runat="server"></asp:Label>
                     </div>
+
                 <asp:Button ID="btnFiltro" runat="server" OnClick="btnFiltro_Click" Text="Filtrar"  CssClass="btn-custom"/>
-                <asp:Button ID="btnMostrarTodo" runat="server" OnClick="btnMostrarTodo_Click" Text="Mostrar todos"  CssClass="btn-custom"/>
+            
+                <asp:Button ID="btnMostrarTodo" runat="server" OnClick="btnMostrarTodo_Click" Text="Mostrar todos"  CssClass="btn-custom"  CausesValidation="False"/>
             <asp:Label ID="lblMensaje" runat="server"></asp:Label>
 
             

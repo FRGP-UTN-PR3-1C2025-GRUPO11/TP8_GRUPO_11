@@ -23,38 +23,31 @@ namespace TP8_GRUPO_11
             int numero = int.Parse(txtEliminar.Text);
 
 
-            string eliminado = "";
+            string mensajeRespuesta = "";
 
             DataTable data = negocioSucursal.getFiltro(txtEliminar.Text);
 
+            if (data.Rows.Count == 1) {
+            
+                bool eliminadoOk = negocioSucursal.eliminarSucursal(numero);
 
-
-            foreach (DataRow row in data.Rows)
-            {
-                eliminado += "ID: " + row["Id"] + "     ";
-                eliminado += "Nombre: " + row["Nombre"] + "     ";
-                eliminado += "Dirección: " + row["Dirección"] ;
-
-            }
-            lblEliminado.Text = "El id eliminado contiene lo siguiente:" + eliminado;
-
-        
-
-
-            bool eliminar = negocioSucursal.eliminarSucursal(numero);
-                if (eliminar)
+                if (eliminadoOk)
                 {
                     lblMensaje.Text = "Se eliminó la sucursal.";
+                    mensajeRespuesta += "ID: " + data.Rows[0][0].ToString() + "     ";
+                    mensajeRespuesta += "Nombre: " + data.Rows[0][1].ToString() + "     ";
+                    mensajeRespuesta += "Dirección: " + data.Rows[0][3].ToString();
+                    lblMensaje.Text += "<br />El id eliminado contiene lo siguiente:" + mensajeRespuesta;
                 }
                 else
                 {
-                    lblMensaje.Text = "NO se eliminó la sucursal.";
-                    lblEliminado.Text = "";
+                    lblMensaje.Text = "No se eliminó la sucursal.";
                 }
-
-           
-
-            txtEliminar.Text = "";
+            } 
+            else
+            {
+                lblMensaje.Text = "No existe la sucursal";
+            }
         }
     }
 }
