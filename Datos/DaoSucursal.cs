@@ -63,10 +63,10 @@ namespace Datos
 
         private void ArmarParametrosSucursalEliminar(ref SqlCommand Comando, Sucursal sucursal)
         {
-            SqlParameter SqlParametros = new SqlParameter();
-            SqlParametros = Comando.Parameters.Add("@Id_Sucursal", SqlDbType.Int);
+            SqlParameter SqlParametros = Comando.Parameters.Add("@IDSUCURSAL", SqlDbType.Int);
             SqlParametros.Value = sucursal.getIdSucursal();
         }
+
 
         public int eliminarSucursal(Sucursal sucursal)
         {
