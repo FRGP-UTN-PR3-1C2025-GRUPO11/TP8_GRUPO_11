@@ -139,7 +139,6 @@ html {
                                 <asp:TextBox ID="txtEliminar" runat="server"  Style="margin-right: 30px; width: 200px"></asp:TextBox>
                                 <asp:Button ID="btnEliminar" runat="server" OnClick="btnEliminar_Click" Text="Eliminar" CssClass="btn-custom"/>
                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Button ID="btnMostrarIdEliminado" runat="server" OnClick="btnMostrarIdEliminado_Click" Text="Mostrar nombres eliminados" />
                                 <br />
                                 <br />
                                 <asp:Label ID="lblMensaje" runat="server" ForeColor="Red"></asp:Label>
@@ -149,12 +148,21 @@ html {
                         ControlToValidate="txtEliminar" ValidationExpression="^[0-9]*$" 
                         Font-Bold="True" ForeColor="Red"></asp:RegularExpressionValidator>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                <asp:Label ID="lblIdEliminado" runat="server"></asp:Label>
                             </div>
                         </div>
                 </div>
             </section>
         </div>
+        <p>
+            &nbsp;</p>
+        <p>
+            &nbsp;</p>
+        <p>
+                                <asp:Button ID="btnMostrarIdEliminado" runat="server" OnClick="btnMostrarIdEliminado_Click" Text="Mostrar nombres eliminados" />
+                                </p>
+        <p>
+                                <asp:Label ID="lblIdEliminado" runat="server"></asp:Label>
+                            </p>
     </form>
 </body>
 </html>
