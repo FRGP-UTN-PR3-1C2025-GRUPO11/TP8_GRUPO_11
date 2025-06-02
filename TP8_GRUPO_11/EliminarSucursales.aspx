@@ -147,6 +147,8 @@ html {
                         ErrorMessage="Debe ser un ID Numerico" Display="Dynamic" 
                         ControlToValidate="txtEliminar" ValidationExpression="^[0-9]*$" 
                         Font-Bold="True" ForeColor="Red"></asp:RegularExpressionValidator>
+                                <br />
+                                <asp:Label ID="lblTotalEliminadas" runat="server" ForeColor="Blue"></asp:Label>
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             </div>
                         </div>
